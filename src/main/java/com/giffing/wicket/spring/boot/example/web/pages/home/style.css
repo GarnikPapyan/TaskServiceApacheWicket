@@ -1,0 +1,43 @@
+table{
+    border:2px solid #000000;
+    border-radius: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    td,th {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+    th{
+        background-color: #007d7d;
+    }
+
+    .even {
+        background-color: #7d7d7d;
+    }
+    .odd {
+        background-color: #00bfbf;
+    }
+}
+
+.logoutLink {
+    float: right;
+}
+
+input {
+    border: 1px solid #bfbfbf;
+    background-color: #bfbfbf;
+    border-radius: 7px;
+    margin: 5px;
+}
+input:hover{
+    background-color: #00fafa;
+    box-shadow: black 3px 1px 3px;
+}
+.remove:hover{
+    background-color: #ba3925;
+}
+
+.customer_opt,.tasks_opt {
+    margin: 10px;
+}

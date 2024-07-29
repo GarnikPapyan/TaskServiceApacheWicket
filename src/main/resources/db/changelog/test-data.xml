@@ -1,0 +1,20 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
+   http://www.liquibase.org/xml/ns/dbchangelog 
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+
+	<changeSet id="init-testdata" author="mgiffing">
+		<insert tableName="customer">
+			<column name="username">Poghos</column>
+			<column name="password">123456</column>
+			<column name="firstname">Poghosi</column>
+			<column name="lastname">Poghosyan</column>
+			<column name="active">1</column>
+		</insert>
+
+	</changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.table-container {
+    max-width: 950px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 14px;
+    text-align: left;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    transition: all 0.3s ease;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-5px);
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-5px);
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    transition: all 0.3s ease;
+}
+
+.buttonAllOpt {
+    border-radius: 5px;
+    border: 2px solid deepskyblue;
+    color: blue;
+    width: 100px;
+    height: 30px;
+    margin: 5px 20px 5px 20px;
+    letter-spacing: 0.5px;
+}
+.buttonAllOpt:hover {
+    background-color: blueviolet;
+    color: white;
+}
+span{
+    margin-right: 15px;
+}
+
+.sectionStyle {
+    min-width: 120px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid deepskyblue;
+    background-color: white;
+    color: blue;
+}
+.confirmSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.modalDial{
+    height: 500px;
+    background-color: #ba3925;
+}
+
+.addButtonSection{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.inputSections {
+    display: flex;
+    justify-content: left;
+    span{
+        margin-left: 10px;
+        width: 150px;
+    }
+    .inputSectionElem {
+        border: 1px solid deepskyblue;
+        border-radius: 5px;
+        margin-left: 10px;
+        color: blue;
+    }
+    margin: 10px;
+}
+.logoutLink {
+    display: flex;
+    justify-content: right;
+}
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<title>Wicket!</title>
+	</head>
+	<body>
+		<div wicket:id="defaultModal"></div>
+
+
+		<wicket:fragment wicket:id="fragment">
+			<form wicket:id="form">
+				<div>
+					<p wicket:id="message"></p>
+					<input type="button" wicket:id="confirm" value="Confirm">
+					<input type="button" wicket:id="cancel" value="Cancel">
+				</div>
+			</form>
+		</wicket:fragment>
+		<div class="container">
+			<wicket:child/>
+
+		</div>
+
+
+	</body>
+</html>

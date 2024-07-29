@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>Spring Boot - Apache Wicket Quickstart</title>
+		<link rel="stylesheet" href="newStyle.css">
+
+	</head>
+	<body>
+		<wicket:extend>
+			<a class="logoutLink" wicket:id="logoutLink">Logout</a>
+			<div wicket:id="modalLoginLink"></div>
+		<h2>Manager</h2>
+			<br>
+			<hr>
+				<form wicket:id="form" >
+					<span>Users</span>
+						<select wicket:id="customer_opt" class="sectionStyle"></select>
+					  	<span> </span>
+					<span>Task status</span>
+						<select wicket:id="tasks_opt" class="sectionStyle"></select>
+						<span> </span>
+						<input type="button" value="Filter" wicket:id="filter" class="buttonAllOpt filterInput">
+						<br>
+						<span wicket:id="feedback">this</span>
+						<br><br>
+						<hr>
+						<br>
+					<input value="Add Task" wicket:id="addTask" type="button" class="buttonAllOpt">
+				</form>
+				<hr>
+				<br>
+			<div class="table-container">
+				<table class="styled-table" >
+					<tr>
+						<th>Task Name</th>
+						<th>Task creation Date</th>
+						<th>Task update Date</th>
+						<th>Task Status</th>
+						<th>Task Description</th>
+						<th>Actions</th>
+					</tr>
+					<tr wicket:id="simple">
+						<td><span wicket:id="name"></span></td>
+						<td><span wicket:id="creationDate"></span></td>
+						<td><span wicket:id="updateDate"></span></td>
+						<td><span wicket:id="status"></span></td>
+						<td><span wicket:id="description"></span></td>
+						<td>
+							<input type="button" class="remove buttonAllOpt"  wicket:id="remove" value="Remove"/>
+							<input type="button" wicket:id="edith" value="Edit" class="buttonAllOpt"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<br>
+			<hr>
+			<br>
+
+
+			<div wicket:id="modalDialog"></div>
+			<wicket:fragment wicket:id="removeTaskFragment" >
+				<form wicket:id="modal">
+					<div class="confirmSection">
+						<p wicket:id="confirmMessage"></p>
+						<div>
+							<input type="button" wicket:id="confirm" value="Confirm" class="buttonAllOpt">
+							<input type="button" wicket:id="cancel" value="Cancel" class="buttonAllOpt">
+						</div>
+					</div>
+				</form>
+			</wicket:fragment>
+
+
+			<div wicket:id="updateDialog"></div>
+			<wicket:fragment wicket:id="editTaskFragment">
+				<form wicket:id="modalUpdate">
+					<div>
+						<div class="inputSections">
+							<span>New Task Name </span>
+							<input type="text" wicket:id="updateTaskName" placeholder="New Task Name" class="inputSectionElem">
+						</div>
+						<div class="inputSections">
+							<span>New Task Description </span>
+							<textarea wicket:id="updateDescription" class="inputSectionElem"></textarea>
+						</div>
+						<div class="inputSections">
+							<span>Edit User</span>
+							<select wicket:id="users_list" class="sectionStyle inputSectionElem" ></select>
+						</div>
+						<div class="inputSections">
+							<span>Edit Task Status</span>
+							<select wicket:id="task_status" class="sectionStyle inputSectionElem"></select>
+						</div>
+						<div class="addButtonSection">
+							<input type="button" wicket:id="save" value="Save" class="buttonAllOpt">
+							<input type="button" wicket:id="cancel" value="Cancel" class="buttonAllOpt">
+						</div>
+					</div>
+				</form>
+			</wicket:fragment>
+
+			<div wicket:id="addTaskDialog"></div>
+			<wicket:fragment wicket:id="addTaskFragment">
+				<form wicket:id="modalAddTask">
+					<div>
+						<div class="inputSections">
+							<span>New Task Name </span>
+							<input type="text" wicket:id="addTaskName" placeholder="New Task Name" class="inputSectionElem">
+						</div>
+						<div class="inputSections">
+							<span>New Task Description </span>
+							<textarea wicket:id="addDescription" class="inputSectionElem"></textarea>
+						</div>
+						<div class="inputSections">
+							<span>Add User For Task</span>
+							<select wicket:id="users_list" class="sectionStyle inputSectionElem"></select>
+						</div>
+						<div class="addButtonSection">
+							<input type="button" wicket:id="save" value="Save" class="buttonAllOpt">
+							<input type="button" wicket:id="cancel" value="Cancel" class="buttonAllOpt">
+						</div>
+					</div>
+				</form>
+			</wicket:fragment>
+
+		</wicket:extend>
+	</body>
+</html>
