@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for Spring boot starter example" enabled="true">
+        <sourceOutputDir name="target/generated-sources/apt" />
+        <sourceTestOutputDir name="target/generated-sources/apt-test" />
+        <outputRelativeToContentRoot value="true" />
+        <processor name="org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor" />
+        <module name="wicket-spring-boot-starter-example" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="wicket-spring-boot-starter-example" options="-parameters -proc:none" />
+    </option>
+  </component>
+</project>
