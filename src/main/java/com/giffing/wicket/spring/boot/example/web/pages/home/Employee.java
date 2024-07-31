@@ -12,6 +12,8 @@ import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
 import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
 import org.apache.wicket.extensions.ajax.markup.html.modal.theme.DefaultTheme;
+import org.apache.wicket.markup.head.CssHeaderItem;
+import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
@@ -25,6 +27,7 @@ import org.apache.wicket.markup.repeater.data.ListDataProvider;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
+import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.wicketstuff.annotation.mount.MountPath;
@@ -69,7 +72,11 @@ public class Employee  extends BasePage {
         this.creationDate = creationDate;
     }
 
-
+    @Override
+    public void renderHead(IHeaderResponse response) {
+        super.renderHead(response);
+        response.render(CssHeaderItem.forReference(new PackageResourceReference(Employee.class, "newStyle.css")));
+    }
 
     public Employee() {
         List<String> creationDates = taskService.getCreationDate();

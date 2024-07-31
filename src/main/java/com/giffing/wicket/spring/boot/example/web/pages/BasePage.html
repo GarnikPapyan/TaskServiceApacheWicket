@@ -2,17 +2,18 @@
 <html xmlns:wicket="http://wicket.apache.org">
 	<head>
 		<title>Wicket!</title>
+
 	</head>
 	<body>
 		<div wicket:id="defaultModal"></div>
 
 
 		<wicket:fragment wicket:id="fragment">
-			<form wicket:id="form">
-				<div>
-					<p wicket:id="message"></p>
-					<input type="button" wicket:id="confirm" value="Confirm">
-					<input type="button" wicket:id="cancel" value="Cancel">
+			<form wicket:id="form" >
+				<div class="confirmButtonSection">
+					<p wicket:id="message" class="myP"></p>
+					<input type="button" wicket:id="confirm" value="Confirm" class="buttonAllOpt">
+					<input type="button" wicket:id="cancel" value="Cancel" class="buttonAllOpt">
 				</div>
 			</form>
 		</wicket:fragment>

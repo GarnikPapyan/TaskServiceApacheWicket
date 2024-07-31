@@ -2,6 +2,7 @@ package com.giffing.wicket.spring.boot.example.web.pages;
 
 import com.giffing.wicket.spring.boot.example.web.pages.home.Employee;
 import com.giffing.wicket.spring.boot.example.web.pages.home.HomePage;
+import com.giffing.wicket.spring.boot.example.web.pages.login.LoginPage;
 import org.apache.wicket.MarkupContainer;
 import org.apache.wicket.extensions.ajax.markup.html.modal.ModalDialog;
 import org.apache.wicket.markup.head.CssHeaderItem;
@@ -48,7 +49,7 @@ public abstract class BasePage extends WebPage {
 	@Override
 	public void renderHead(IHeaderResponse response) {
 		super.renderHead(response);
-		
+
 		response.render(JavaScriptHeaderItem.forReference(getApplication().getJavaScriptLibrarySettings().getJQueryReference()));
 		response.render(JavaScriptHeaderItem.forReference(getApplication().getJavaScriptLibrarySettings().getWicketAjaxReference()));
 

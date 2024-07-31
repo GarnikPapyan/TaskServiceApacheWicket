@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Spring Boot - Apache Wicket Quickstart</title>
-
+		<link rel="stylesheet" href="styleLogin.css">
 	</head>
 	<body>
 		<wicket:extend>
@@ -12,11 +12,11 @@
 			<div wicket:id="feedback"></div>
 			<p>
 				<label>Username:</label>
-				<input type="text" wicket:id="username" />
+				<input type="text" wicket:id="username" placeholder="Username" class="inputName" />
 			</p>
 			<p>
 				<label>Password:</label>
-				<input type="password" wicket:id="password" />
+				<input type="password" wicket:id="password" placeholder="Password"  class="inputPass" />
 			</p>
 			<input type="submit" value="Login" />
 		</form>

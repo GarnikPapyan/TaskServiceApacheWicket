@@ -1,0 +1,35 @@
+.inputName {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #ba3925;
+}
+
+.confirmButtonSection{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    .myP{
+        color: red;
+        margin-left: 10px;
+        width: 150px;
+    }
+}
+.buttonAllOpt {
+    border-radius: 5px;
+    border: 2px solid deepskyblue;
+    color: blue;
+    width: 100px;
+    height: 30px;
+    margin: 5px 20px 5px 20px;
+    letter-spacing: 0.5px;
+}
+.buttonAllOpt:hover {
+    background-color: blueviolet;
+    color: white;
+}
+
+
