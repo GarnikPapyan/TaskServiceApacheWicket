@@ -47,6 +47,7 @@ public class LoginPage extends BasePage {
 	private AuthenticationProvider authenticationProvider;
 
 
+
 	public LoginPage(PageParameters parameters) {
 		super(parameters);
 		if (((AbstractAuthenticatedWebSession) getSession()).isSignedIn()) {

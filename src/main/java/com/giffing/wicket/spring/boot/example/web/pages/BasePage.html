@@ -2,7 +2,7 @@
 <html xmlns:wicket="http://wicket.apache.org">
 	<head>
 		<title>Wicket!</title>
-
+		<link rel="stylesheet" href="stylelogout.css">
 	</head>
 	<body>
 		<div wicket:id="defaultModal"></div>
@@ -12,8 +12,10 @@
 			<form wicket:id="form" >
 				<div class="confirmButtonSection">
 					<p wicket:id="message" class="myP"></p>
-					<input type="button" wicket:id="confirm" value="Confirm" class="buttonAllOpt">
-					<input type="button" wicket:id="cancel" value="Cancel" class="buttonAllOpt">
+					<div class="buttonContainer">
+						<input type="button" wicket:id="confirm" value="Confirm" class="buttonAllOpt">
+						<input type="button" wicket:id="cancel" value="Cancel" class="buttonAllOpt">
+					</div>
 				</div>
 			</form>
 		</wicket:fragment>
@@ -21,7 +23,6 @@
 			<wicket:child/>
 
 		</div>
-
 
 	</body>
 </html>

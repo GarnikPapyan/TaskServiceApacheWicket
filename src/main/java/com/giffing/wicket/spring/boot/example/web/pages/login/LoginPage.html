@@ -10,15 +10,20 @@
 		<h2><wicket:message key="login.label">login</wicket:message></h2>
 		<form wicket:id="loginForm">
 			<div wicket:id="feedback"></div>
-			<p>
-				<label>Username:</label>
-				<input type="text" wicket:id="username" placeholder="Username" class="inputName" />
-			</p>
-			<p>
-				<label>Password:</label>
-				<input type="password" wicket:id="password" placeholder="Password"  class="inputPass" />
-			</p>
-			<input type="submit" value="Login" />
+			<div class="loginContainer">
+				<p>
+					<label>Username:</label>
+					<input type="text" wicket:id="username" placeholder="Username" class="inputName" />
+				</p>
+				<p>
+					<label>Password:</label>
+					<input type="password" wicket:id="password" placeholder="Password"  class="inputPass" />
+				</p>
+				<div>
+					<input type="submit" value="Login" class="loginSubmit" />
+				</div>
+
+			</div>
 		</form>
 		<hr>
 		<p class="help-block">
@@ -26,7 +31,6 @@
 				<div>admin:manager</div>
 				<div>customer:garnik</div>
 			</p>
-
 
 		</wicket:extend>
 	</body>
