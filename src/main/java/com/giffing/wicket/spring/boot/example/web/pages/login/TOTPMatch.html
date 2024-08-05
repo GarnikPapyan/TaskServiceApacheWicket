@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Spring Boot - Apache Wicket Quickstart</title>
+    <link rel="stylesheet" href="styleLogin.css">
+</head>
+<body>
+
+<wicket:panel>
+
+    <h1>TOTP Page</h1>
+    <form wicket:id="form">
+
+        <div class="regContainer">
+            <div class="row">
+                <a href="/login" class="back-arrow" wicket:id="backLink">Back to Login</a>
+            </div>
+            <h2 class="regText">2FAuth</h2>
+            <div wicket:id="feedback"></div>
+            <div>
+                <label>Google Auth Code</label>
+                <input placeholder="123456" class="inputName" type="text" wicket:id="authCode">
+            </div>
+            <div>
+                <input type="button" class="loginSubmit" value="Submit" wicket:id="submit">
+            </div>
+        </div>
+    </form>
+
+</wicket:panel>
+</body>
+</html>

@@ -1,18 +1,44 @@
-.inputName,.inputPass {
+
+
+.inputName,.inputPass , .inputLastName, .inputUserName {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
     box-sizing: border-box;
-    /*background-color: #ba3925;*/
 }
-.loginContainer{
+.authContainer > label {
+    width: 110px;
+}
+label {
+    width: 123px;
+}
+.loginContainer ,.regContainer , .authContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 250px;
     width: 800px;
+}
+.regContainer , .authContainer {
+    margin-top: 30px;
+    min-height: 650px;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px  #ccc;
+}
+
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.row > div {
+    margin: 10px;
 }
 
 .loginSubmit {
@@ -29,9 +55,34 @@
     color: white;
 }
 
+.loginLink {
+    box-sizing: border-box;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 2px solid deepskyblue;
+    background-color: blueviolet;
+    color: white;
+    width: 115px;
+    padding: 10px;
+    margin: 5px 20px 5px 20px;
+    letter-spacing: 0.5px;
+    text-underline: none;
+}
+.loginLink:hover {
+    text-underline: none;
+    text-decoration: none;
+    background-color: white;
+    color: blueviolet;
+}
 
-.loginContainer input[type="submit"] {
+
+.loginContainer .regContainer  input[type="submit"] {
     width: 100px;
+}
+
+
+input:hover{
+    border-color: blueviolet;
 }
 
 input::placeholder {
@@ -40,4 +91,42 @@ input::placeholder {
 
 input:focus::placeholder {
     opacity: 0;
+}
+
+.back-arrow {
+    margin: 20px 20px 20px 40px;
+    cursor: pointer;
+    text-decoration: none;
+    color: blueviolet;
+    position: relative;
+    text-underline: none;
+    font-size: 12px;
+    transition: transform 0.3s,font-size 0.3s;
+}
+.back-arrow:hover{
+    text-decoration: none;
+    text-underline: none;
+    color: blueviolet;
+    font-size: 16px;
+}
+.back-arrow::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blueviolet;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 40%;
+    left: -15px;
+    transform: translateY(-50%) rotate(-45deg);
+    transition: transform 0.3s;
+}
+
+.back-arrow:hover::before {
+    position: absolute;
+    top: 20%;
+    left: -15px;
+    transform: translateX(-50%) rotate(-45deg) scale(1.1);
 }

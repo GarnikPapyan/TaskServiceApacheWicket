@@ -21,6 +21,8 @@ public class Customer implements  Serializable {
 	
 	private String lastname;
 
+	private String secretKay;
+
 	@Enumerated(EnumType.STRING)
 	private Roles roles;
 
@@ -33,6 +35,14 @@ public class Customer implements  Serializable {
 
 	public void setRoles(Roles roles) {
 		this.roles = roles;
+	}
+
+	public String getSecretKay() {
+		return secretKay;
+	}
+
+	public void setSecretKay(String secretKay) {
+		this.secretKay = secretKay;
 	}
 
 	public List<Tasks> getTasks() {

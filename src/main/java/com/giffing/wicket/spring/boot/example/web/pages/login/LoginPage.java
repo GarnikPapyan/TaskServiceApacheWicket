@@ -1,26 +1,14 @@
 package com.giffing.wicket.spring.boot.example.web.pages.login;
 
-import com.giffing.wicket.spring.boot.example.entity.Roles;
-import com.giffing.wicket.spring.boot.example.web.pages.home.Employee;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.giffing.wicket.spring.boot.example.web.service.CustomerService;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
-import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
 import org.apache.wicket.authroles.authentication.AbstractAuthenticatedWebSession;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
-import org.apache.wicket.markup.head.CssHeaderItem;
-import org.apache.wicket.markup.head.CssReferenceHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.form.*;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
-import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.apache.wicket.request.resource.CssResourceReference;
-import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.apache.wicket.util.value.ValueMap;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -45,7 +33,9 @@ public class LoginPage extends BasePage {
 	private AuthenticationManager authenticationManager;
 	@SpringBean
 	private AuthenticationProvider authenticationProvider;
-
+	@SpringBean
+	private CustomerService customerService;
+	public static String flag;
 
 
 	public LoginPage(PageParameters parameters) {
@@ -66,7 +56,7 @@ public class LoginPage extends BasePage {
 		
 		private String password;
 		private final ValueMap properties = new ValueMap();
-
+		private Boolean off = true;
 		private TextField<String> usernameTextField;
 		private PasswordTextField passwordTextField;
 
@@ -83,10 +73,17 @@ public class LoginPage extends BasePage {
 			add(passwordTextField);
 			add(new FeedbackPanel("feedback"));
 
+			add(new AjaxLink<Void>("loginLink") {
+				@Override
+				public void onClick(AjaxRequestTarget ajaxRequestTarget) {
+					setResponsePage(RegistrationPage.class);
+				}
+			});
 		}
 
 		@Override
 		protected void onSubmit() {
+
 			System.out.println("On submit");
 			username = properties.getString("username");
 			password = properties.getString("password");
@@ -102,15 +99,19 @@ public class LoginPage extends BasePage {
 						if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("MANAGER"))){
 							AuthenticatedWebSession session = AuthenticatedWebSession.get();
 							session.signIn(username,password);
+							TOTPMatch.secretKey = customerService.getCustomerSecretKay(authentication.getName());
+							flag = "manager";
 							System.out.println(authentication.getAuthorities().contains(new SimpleGrantedAuthority("MANAGER")));
 							System.out.println(authentication.getAuthorities().contains(new SimpleGrantedAuthority("EMPLOYEE")));
-							setResponsePage(HomePage.class);
+							setResponsePage(TOTPMatch.class);
 						} else if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("EMPLOYEE"))) {
 							AuthenticatedWebSession session = AuthenticatedWebSession.get();
 							session.signIn(username,password);
+							TOTPMatch.secretKey = customerService.getCustomerSecretKay(authentication.getName());
+							flag = "employee";
 							System.out.println(authentication.getAuthorities().contains(new SimpleGrantedAuthority("MANAGER")));
 							System.out.println(authentication.getAuthorities().contains(new SimpleGrantedAuthority("EMPLOYEE")));
-							setResponsePage(Employee.class);
+							setResponsePage(TOTPMatch.class);
 						}
 					} else {
 						System.out.println("sxal pass");
@@ -121,6 +122,8 @@ public class LoginPage extends BasePage {
 				error("Login failed");
 			}
 		}
+
+
 
 		@Override
 		protected void onError() {

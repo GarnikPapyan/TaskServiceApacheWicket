@@ -48,6 +48,7 @@ public class WicketWebSecurityAdapterConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/login").permitAll()
+                        .requestMatchers("/register").permitAll()
                         .requestMatchers("/home").hasAuthority("MANAGER")
                         .requestMatchers("/employee").hasAuthority("EMPLOYEE")
                         .anyRequest().authenticated()

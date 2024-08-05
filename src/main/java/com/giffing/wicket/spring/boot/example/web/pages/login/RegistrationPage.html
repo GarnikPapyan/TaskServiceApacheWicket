@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Spring Boot - Apache Wicket Quickstart</title>
+    <link rel="stylesheet" href="styleLogin.css">
+</head>
+<body>
+<wicket:extend>
+
+    <form wicket:id="form">
+        <div class="regContainer">
+            <div class="row">
+                <a href="/login" class="back-arrow">Back to Login</a>
+            </div>
+            <div wicket:id="feedback"></div>
+            <h2 class="regText">Create User</h2>
+            <div>
+                <label>Name</label>
+                <input placeholder="Name" class="inputName" type="text" wicket:id="firstName">
+            </div>
+            <div>
+                <label>Last Name</label>
+                <input placeholder="Last Name" class="inputLastName" type="text" wicket:id="lastName">
+            </div>
+            <div>
+                <label>User Name</label>
+                <input placeholder="User Name" class="inputUserName" type="text" wicket:id="userName">
+            </div>
+            <div>
+                <label>User Password</label>
+                <input placeholder="Password" class="inputPass" type="password" wicket:id="password">
+            </div>
+            <div>
+                <input type="button" class="loginSubmit" value="Create" wicket:id="createButton">
+            </div>
+        </div>
+    </form>
+
+</wicket:extend>
+</body>
+</html>

@@ -27,10 +27,15 @@ public class CustomerService {
     private  PasswordEncoder passwordEncoder;
 
     @Transactional
-    public void save(Customer customer) {
-        String encodedPassword = passwordEncoder.encode(customer.getPassword());
-        customer.setPassword(encodedPassword);
-        customerRepository.save(customer);
+    public void save(String firstName, String lastName, String userName, String password) {
+        Customer savedCustomer = new Customer();
+        String encodedPassword = passwordEncoder.encode(password);
+        savedCustomer.setFirstname(firstName);
+        savedCustomer.setLastname(lastName);
+        savedCustomer.setUsername(userName);
+        savedCustomer.setPassword(encodedPassword);
+        savedCustomer.setRoles(Roles.EMPLOYEE);
+        customerRepository.save(savedCustomer);
     }
 
     public Optional<Customer> findByUsername(String username) {
@@ -64,5 +69,12 @@ public class CustomerService {
     public List<Customer> findAll() {
         return customerRepository.findAll();
     }
+    public Boolean existsByUsername(String username) {
+        return customerRepository.existsCustomerByUsername(username);
+    }
 
+    public String getCustomerSecretKay(String customerName){
+        Optional<Customer> customer =customerRepository.findByUsername(customerName);
+        return customer.get().getSecretKay();
+    }
 }

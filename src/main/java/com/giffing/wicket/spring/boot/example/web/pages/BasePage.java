@@ -52,12 +52,12 @@ public abstract class BasePage extends WebPage {
 
 		response.render(JavaScriptHeaderItem.forReference(getApplication().getJavaScriptLibrarySettings().getJQueryReference()));
 		response.render(JavaScriptHeaderItem.forReference(getApplication().getJavaScriptLibrarySettings().getWicketAjaxReference()));
-
+		response.render(CssHeaderItem.forReference(new PackageResourceReference(BasePage.class, "stylelogout.css")));
+		response.render(CssHeaderItem.forReference(new PackageResourceReference(LoginPage.class, "styleLogin.css")));
 		String bootstrapPrefixPath = "bootstrap/current";
 		response.render(JavaScriptHeaderItem.forReference(new WebjarsJavaScriptResourceReference(bootstrapPrefixPath + "/js/bootstrap.js")));
 		response.render(CssHeaderItem.forReference(new WebjarsJavaScriptResourceReference(bootstrapPrefixPath + "/css/bootstrap.css")));
-		response.render(CssHeaderItem.forReference(new PackageResourceReference(BasePage.class, "stylelogout.css")));
-		response.render(CssHeaderItem.forReference(new PackageResourceReference(LoginPage.class, "styleLogin.css")));
+
 	}
 
 
